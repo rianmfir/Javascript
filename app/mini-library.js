@@ -33,14 +33,13 @@ class Table {
   }
 }
 
-const table = new Table({
-  columns: ["Name", "Email", "Phone"],
-  data: [
-    ["Rian", "rian@rianmfir.com", "0889947473724"],
-    ["Muhammad", "muhammad@rianmfir.com", "0874764574545"],
-    ["Firdaus", "firdaus@rianmfir.com", "0817343728423"],
-  ],
-});
+const createTable = (columns, data) => {
+  const table = new Table({
+    columns: columns,
+    data: data,
+  });
+  const app = document.getElementById("app");
+  table.render(app);
+};
 
-const app = document.getElementById("app");
-table.render(app);
+export default createTable;
